@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criador de site</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		
+		#editor {
+			width: 100%;
+			height: 300px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		
+		#resultado {
+			width: 100%;
+			height: 500px;
+			border: 1px solid #ccc;
+			padding: 10px;
+			box-sizing: border-box;
+			overflow: auto;
+			background-color: white;
+		}
+		
+		/* Media queries */
+		@media (max-width: 768px) {
+			/* Estilos para telas menores que 768px */
+			body {
+				font-size: 14px;
+			}
+			
+			#editor {
+				height: 200px;
+			}
+			
+			#resultado {
+				height: 300px;
+			}
+		}
+		
+		@media (max-width: 576px) {
+			/* Estilos para telas menores que 576px */
+			body {
+				font-size: 12px;
+			}
+			
+			#editor {
+				height: 100px;
+			}
+			
+			#resultado {
+				height: 200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Criador de Ste</h1>
+	
+	<textarea id="editor"></textarea>
+	
+	<button onclick="atualizar()">Atualizar</button>
+	
+	<div id="resultado"></div>
+	
+	<script>
+		function atualizar() {
+			var codigo = document.getElementById("editor").value;
+			document.getElementById("resultado").innerHTML = codigo;
+		}
+	</script>
+</body>
+</html>
